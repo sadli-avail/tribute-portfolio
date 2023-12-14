@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+
+    <style>
+        body {
+
+            
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #4caf50;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <a href="home.html"><li>Home</li></a>
+                <a href="..html"><li> My Intro</li></a>
+                
+                <a href="apj.html"><li>APJ Abdul Kalam</li></a>
+                
+                <a href="stevejobs.html"><li>Steve Jobs</li></a>
+                
+                <a href="sd-sir.html"><li>SD Sir</li></a>
+                
+                <a href="quiz.html"><li>Quiz</li></a>
+                <a href="info.html"><li>Info</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+                
+            </ul>
+        </div>
+
+
+
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        
+            <p class="error" id="errorMessage"></p>
+        
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        
+
+
+        
+    </div>
+
+
+
+    
+
+
+
+<script>
+    function submitForm() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        var errorMessage = document.getElementById('errorMessage');
+
+        // Simple email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMessage.textContent = 'Invalid email address';
+            return;
+        }
+
+        // Your custom validation logic can go here
+
+        // If all validations pass, you can proceed to submit the form
+        // For simplicity, this example just logs the data to the console
+        //console.log('Name: ', name);
+        //console.log('Email: ', email);
+        //console.log('Message: ', message);
+
+        // Clear error message
+        errorMessage.textContent = '';
+    }
+</script>
+
+</body>
+</html>
